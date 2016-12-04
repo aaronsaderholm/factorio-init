@@ -1,16 +1,31 @@
 # Factorio Init Script
 A simple factorio init script for linux
 
+To install:  Get the copy for the latest factorio headless linux client from https://www.factorio.com/download-headless/stable.  Currently this is:
+
+```https://www.factorio.com/get-download/0.14.21/headless/linux64```
+
+# Setup
+
+ These steps were tested on Ubuntu 16.04.
+
+ ```
+ cd /opt; git clone https://github.com/Bisa/factorio-init.git;
+ wget https://www.factorio.com/get-download/0.14.21/headless/linux64;
+ tar -xvzf linux64;
+ adduser --disabled-login --no-create-home --gecos factorio factorio;
+ chown -R factorio:factorio /opt/factorio;
+```
 # Debugging
  If you find yourself wondering why stuff is not working the way you expect:
  - Check the logs, I suggest you `tail -f /opt/factorio/factorio-current.log` in a separate session
  - Enable debugging in the config and/or:
- - Try running the same commands as the factorio user (`/opt/factorio-init/factorio invocation` will tell you what the factorio user tries to run at start)
+ - Try running the same commands as the factorio user (`/opt/factorio-init/factorio factorio invocation` will tell you what the factorio user tries to run at start)
 
  ```bash
- $ /opt/factorio-init invocation
+ /opt/factorio-init factorio invocation
  #  Run this as the factorio user, example:
- $ sudo -u factorio 'whatever invocation gave you'
+ sudo -u factorio 'whatever invocation gave you'
  # You should see some output in your terminal here, hopefully giving
  # you a hint of what is going wrong
  ```
@@ -19,8 +34,8 @@ A simple factorio init script for linux
 - Create a directory where you want to store this script along with configuration. (either copy-paste the files or clone from github):
 
  ```bash
- $ cd '/opt'
- $ git clone https://github.com/Bisa/factorio-init.git
+ cd '/opt'
+ git clone https://github.com/Bisa/factorio-init.git
  ```
 - Rename config.example to config and modify the values within according to your setup.
 
