@@ -3,7 +3,9 @@ A simple factorio init script for linux
 
 To install:  Get the copy for the latest factorio headless linux client from https://www.factorio.com/download-headless/stable.  Currently this is:
 
-```https://www.factorio.com/get-download/0.14.21/headless/linux64```
+```
+https://www.factorio.com/get-download/0.14.21/headless/linux64
+```
 
 # Setup
 
